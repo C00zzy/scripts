@@ -12,3 +12,4 @@ apt update && apt upgrade && sudo apt update && sudo apt upgrade
 echo "Don't worry about 
 echo "Have fun, Don't break it!"
 echo "Make sure it's right."
+cat /etc/apt/sources.list
