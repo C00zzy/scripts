@@ -4,7 +4,7 @@
 echo "Updating and upgrading the system first also removing old repos..."
 sudo apt update && sudo apt upgrade && apt update && apt upgrade
 rm /etc/apt/sources.list
-echo "setting new repos"
+echo "setting unstable repos..."
 echo "deb http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 echo "deb-src http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 "Echo upgrading system"
