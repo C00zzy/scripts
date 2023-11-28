@@ -17,7 +17,8 @@ echo "alias aurremove='paru -Rs'" >> .bashrc
 echo "alias aursearch='paru -Ss'" >> .bashrc
 sudo pacman -S git cargo base-devel
 git clone https://aur.archlinux.org/paru-git
-cd paru-git
+cd /home/nolan/scripts/paru-git
+makepkg
 echo "Do makepkg, Then sudo pacman -U"
 #END
 clear
