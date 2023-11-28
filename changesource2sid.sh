@@ -7,9 +7,8 @@ rm /etc/apt/sources.list
 echo "setting unstable repos..."
 echo "deb http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 echo "deb-src http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
-"Echo upgrading system"
-apt update && apt upgrade && sudo apt update && sudo apt upgrade
-echo "Don't worry about 
+Echo "upgrading system"
+apt update && apt upgrade
+clear
 echo "Have fun, Don't break it!"
-echo "Make sure it's right."
-cat /etc/apt/sources.list
+
