@@ -13,3 +13,4 @@ echo "Installing paru incase it doesn't have it"
 echo "alias auradd='paru -S'" >> .bashrc
 echo "alias aurremove='paru -Rs'" >> .bashrc
 echo "alias aursearch='paru -Ss'" >> .bashrc
+#END
