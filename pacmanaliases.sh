@@ -12,13 +12,13 @@ echo "alias pacautoremove='pacman -Rdd'" >> .bashrc
 echo "alias pacsearch='pacman -Qe'" >> .bashrc
 #Alright This is for paru
 echo "Installing paru incase it doesn't have it"
-sudo pacman -S git cargo base-devel
-git clone https://aur.archlinux.org/paru-git
-cd paru-git
-makepkg
 echo "install the package with pacman -U"
 echo "alias auradd='paru -S'" >> .bashrc
 echo "alias aurremove='paru -Rs'" >> .bashrc
 echo "alias aursearch='paru -Ss'" >> .bashrc
+sudo pacman -S git cargo base-devel
+git clone https://aur.archlinux.org/paru-git
+cd paru-git
+echo "Do makepkg, Then sudo pacman -U"
 #END
 clear
