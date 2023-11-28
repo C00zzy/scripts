@@ -1,6 +1,7 @@
 #! /bin/bash
 #This is for pacman aliases, pacman syntax is dogshit IMO.
 #Linking sudo and doas incase its using doas
+#Also this installs paru! That's cool.
 ln -s $(which doas) /usr/bin/sudo
 echo "This is for bash btw"
 echo "Installing sudo incase you don't have it"
