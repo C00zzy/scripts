@@ -12,7 +12,6 @@ echo "alias pacautoremove='pacman -Rdd'" >> .bashrc
 echo "alias pacsearch='pacman -Qe'" >> .bashrc
 #Alright This is for paru
 echo "Installing paru incase it doesn't have it"
-echo "install the package with pacman -U"
 echo "alias auradd='paru -S'" >> .bashrc
 echo "alias aurremove='paru -Rs'" >> .bashrc
 echo "alias aursearch='paru -Ss'" >> .bashrc
