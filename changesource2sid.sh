@@ -1,4 +1,5 @@
 #! /bin/bash
+#This for debian 12, Any release testing or stable. Sid is unstable though i wouldn't use it.
 echo "Updating and upgrading the system first"
   sudo apt update && sudo apt upgrade && apt update && apt upgrade
 echo "Removing old repos"
