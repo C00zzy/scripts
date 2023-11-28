@@ -1,0 +1,17 @@
+#!/bin/bash
+#Okay, so this is a template for other scripts, If i wanted to make a yes or no script, Generated with chatgpt btw.
+
+# Ask the user for input
+read -p "Do you want to proceed? (yes/no): " answer
+
+# Check the user's input using an if statement
+if [[ $answer =~ ^[Yy](es)?$ ]]; then
+    echo "You chose YES. Proceeding..."
+    # Add your code or actions to execute if the user chooses 'yes'
+elif [[ $answer =~ ^[Nn]o?$ ]]; then
+    echo "You chose NO. Exiting..."
+    # Add your code or actions to execute if the user chooses 'no'
+else
+    echo "Invalid input. Please enter 'yes' or 'no'."
+    # Handle cases where the user enters something other than 'yes' or 'no'
+fi
