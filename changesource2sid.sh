@@ -7,7 +7,7 @@ echo "setting new repos"
 echo "deb http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 echo "deb-src http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 echo "upgrading system"
-apt update && apt upgrade && sudo apt update && sudo apt upgrade
+sudo apt update;sudo apt upgrade
 elif [[ $answer =~ ^[Nn]o?$ ]]; then
 echo "Good choice..."
 exit
