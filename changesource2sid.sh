@@ -1,19 +1,15 @@
-#!/bin/bash
-read -p "Do you want to enable sid repos y/n" answer
-if [[ &answer =~ ^[yy](es)?$ ]]; then 
-echo "Alright Don't blame if it breaks.."
+# /bin/bash
+#This for debian 12, Any release testing or stable. Sid is unstable though i wouldn't use it.
+#Use openSUSE or arch if you want new packages to be honest.
+echo "Updating and upgrading the system first also removing old repos..."
+sudo apt update && sudo apt upgrade && apt update && apt upgrade
 rm /etc/apt/sources.list
-echo "setting new repos"
+echo "setting unstable repos..."
 echo "deb http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 echo "deb-src http://deb.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
-echo "upgrading system"
-sudo apt update;sudo apt upgrade
-elif [[ $answer =~ ^[Nn]o?$ ]]; then
-echo "Good choice..."
-exit
-else
-echo "Not a valid input!"
-./changesource2sid.sh
-fi
-
-#This a test!
+"Echo upgrading system"
+apt update && apt upgrade && sudo apt update && sudo apt upgrade
+echo "Don't worry about 
+echo "Have fun, Don't break it!"
+echo "Make sure it's right."
+cat /etc/apt/sources.list
