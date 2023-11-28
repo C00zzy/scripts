@@ -1,0 +1,58 @@
+# Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x1E1E1E'  # Dark gray background
+    foreground: '0xC0C0C0'  # Light gray text
+
+  # Normal colors
+  normal:
+    black: '0x000000'
+    red: '0xFF0000'
+    green: '0x00FF00'
+    yellow: '0xFFFF00'
+    blue: '0x0000FF'
+    magenta: '0xFF00FF'
+    cyan: '0x00FFFF'
+    white: '0xFFFFFF'
+
+  # Bright colors
+  bright:
+    black: '0x808080'
+    red: '0xFF8080'
+    green: '0x80FF80'
+    yellow: '0xFFFF80'
+    blue: '0x8080FF'
+    magenta: '0xFF80FF'
+    cyan: '0x80FFFF'
+    white: '0xC0C0C0'
+
+# Visual bell settings
+visual_bell:
+  key: 'F10'
+  color: '0xFF0000'
+
+# Window settings
+window:
+  padding:
+    x: 10
+    y: 10
+# Font settings
+font:
+  size: 16  # Adjust the size to your preference
+  normal:
+    family: 'Source Code Pro'
+  bold:
+    family: 'Source Code Pro'
+
+# Colors and other settings...
+colors:
+  primary:
+    background: '0x1E1E1E'
+    foreground: '0xC0C0C0'
+window.opacity: 0.0
+
+## with:
+
+window:
+  opacity: 0.9
