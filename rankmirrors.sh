@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 #This ranks mirrors for pacman.
 #Needs reflector.
 #Run this as root or it probably won't work.
