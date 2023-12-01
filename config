@@ -4,7 +4,7 @@
     "height": 40,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/recorder", "tray", "pulseaudio", "backlight", "temperature", "cpu", "battery", "network", "custom/powermenu"],
+    "modules-right": ["custom/recorder", "temperature", "tray", "pulseaudio", "backlight", "temperature","battery","custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -37,12 +37,12 @@
     },
     "clock": {
         "format": "{:%a %d %b - %H:%M}",
-        "tooltip": false
+        "tooltip": true
     },
     "cpu": {
         "interval": 5,
-        "format": "︁ {}%",
-        "max-length": 10
+        "format": "RAM {}%",
+        "max-length": 20
     },
     "memory": {
         "interval": 15,
@@ -68,10 +68,10 @@
         "on-click": "killall -s SIGINT wf-recorder"
 	},
     "battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span> {capacity}%{time}",
-        "format-icons": ["", "", "", "", ""],
+        "format": "<span font='Source Code Pro'>{icon}</span> {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
         "format-time": " ({H}h{M}m)",
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+        "format-charging": "<span font='Source Code Pro'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
         "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
         "interval": 15,
         "states": {
@@ -106,7 +106,7 @@
         "format": "{icon} {percent}%",
         "format-alt": "{icon}",
         "format-alt-click": "click-left",
-        "format-icons": ["", ""],
+        "format-icons": ["󰌶 ", "󰌶 "],
         "on-scroll-up": "light -A 1",
         "on-scroll-down": "light -U 1"
     },
