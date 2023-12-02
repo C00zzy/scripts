@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #Okay, so this is a template for other scripts like If i wanted to make a yes or no script I would use this and also, Generated with chatgpt btw.
 
 # Ask the user for input
