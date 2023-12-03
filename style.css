@@ -14,7 +14,7 @@ window#waybar {
     text-shadow: none;
     transition-duration: 0s;
     color: rgba(217, 216, 216, 1);
-    background: #1a1b26;
+    background: transparent;
 }
 
 #workspaces {
@@ -24,7 +24,6 @@ window#waybar {
 #workspaces button {
     padding: 0 8px;
     color: #565f89;
-    border: 3px solid rgba(9, 85, 225, 0);
     border-radius: 10px;
     min-width: 33px;
 }
@@ -34,8 +33,9 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    border-top: 3px solid #7aa2f7;
-    border-bottom: 3px solid #7aa2f7;
+    border-top: 3px solid #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+    color: #FFFFFF;
 }
 
 #workspaces button.urgent {
@@ -44,9 +44,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
     border-color: #bb9af7;
-    color: #bb9af7;
+    color: #FFFFFF;
 }
 
 /* Repeat style here to ensure properties are overwritten as there's no !important and button:hover above resets the colour */
@@ -121,4 +120,3 @@ window#waybar {
         background-color: #ffffff;
         color: black;
     }
-}
