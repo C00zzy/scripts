@@ -2,28 +2,29 @@
     "layer": "top",
     "position": "top",
     "height": 40,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["hyprland/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["custom/recorder", "temperature", "tray", "pulseaudio", "backlight", "temperature","battery","custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": false,
+        "all-outputs": true,
         "disable-markup": false,
-        "format": "{icon}",
+        "format": "{}",
         "format-icons": {
-            "1": "1 <span font='Font Awesome 5 Free 14'></span>",
-            "2": "2 <span font='Font Awesome 5 Free 14'></span>",
-            "3": "3 <span font='Font Awesome 5 Free 14'></span>",
-            "4": "4 <span font='Font Awesome 5 Free 14'></span>",
-            "5": "5 <span font='Font Awesome 5 Free 14'></span>",
-            "6": "6 <span font='Font Awesome 5 Free 14'></span>",
-            "7": "7 <span font='Font Awesome 5 Free 14'></span>",
-            "8": "8 <span font='Font Awesome 5 Free 14'></span>",
-            "9": "9 <span font='Font Awesome 5 Free 14'></span>",
-            "10": "0 <span font='Font Awesome 5 Free 14'></span>"
+            "1": "1 <span font='Source Code Pro'></span>",
+            "2": "2 <span font='Source Code Pro'></span>",
+            "3": "3 <span font='Source Code Pro'></span>",
+            "4": "4 <span font='Source Code Pro'></span>",
+            "5": "5 <span font='Source Code Pro'></span>",
+            "6": "6 <span font='Source Code Pro'></span>",
+            "7": "7 <span font='Source Code Pro'></span>",
+            "8": "8 <span font='Source Code Pro'></span>",
+            "9": "9 <span font='Source Code Pro'></span>",
+            "10": "0 <span font='Source Code Pro'></span>"
+
         }
     },
     "tray": {
@@ -49,15 +50,6 @@
         "format": "<span font='Font Awesome 5 Free 9'>︁</span> {used:0.1f}G/{total:0.1f}G",
         "tooltip": false
     },
-    "custom/powermenu": {
-        "return-type": "json",
-        "exec": "/home/marco/.config/waybar/modules/powermenu.sh",
-        "format": "<span font='Font Awesome 5 Free 9'>{icon}</span>  {}",
-        "format-icons": [""],
-        "interval": 3600,
-        "escape": true,
-        "on-click": "/home/marco/.config/wofi/wofi-power.sh"
-    },
     "custom/recorder": {
 		"format": "!",
 		"return-type": "json",
@@ -72,7 +64,7 @@
         "format-icons": [" ", " ", " ", " ", " "],
         "format-time": " ({H}h{M}m)",
         "format-charging": "<span font='Source Code Pro'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
-        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+        "format-full": "<span font='Font Awesome 5 Free'> -</span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  ",
         "interval": 15,
         "states": {
             "warning": 25,
@@ -93,7 +85,6 @@
         "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume}%",
         "format-alt": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume}%",
         "format-alt-click": "click-right",
-        "format-muted": "<span font='Font Awesome 5 Free 11'></span>",
         "format-icons": {
             "phone": [" ", " ", " ", " "],
             "default": ["", "", "", ""]
@@ -125,3 +116,4 @@
         ]
     }
 }
+➜  ~
