@@ -2,10 +2,10 @@
     "layer": "top",
     "position": "top",
     "height": 40,
-    "modules-left": ["hyprland/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/recorder", "temperature", "tray", "pulseaudio", "backlight", "temperature","battery","custom/powermenu"],
-    "sway/mode": {
+    "modules-right": ["temperature", "tray", "pulseaudio", "backlight", "temperature","battery","custom/powermenu"],
+    "hyprland/mode": {
         "format": " {}"
     },
     "hyprland/workspaces": {
@@ -31,7 +31,7 @@
         "icon-size": 20,
         "spacing": 8
     },
-    "sway/window": {
+    "hyprland/window": {
         "max-length": 60,
         "tooltip": false
         // "format": "( {} )"
@@ -50,15 +50,6 @@
         "format": "<span font='Font Awesome 5 Free 9'>︁</span> {used:0.1f}G/{total:0.1f}G",
         "tooltip": false
     },
-    "custom/recorder": {
-		"format": "!",
-		"return-type": "json",
-		"interval": 3,
-		"exec": "echo '{\"class\": \"recording\"}'",
-		"exec-if": "pgrep wf-recorder",
-        "tooltip": false,
-        "on-click": "killall -s SIGINT wf-recorder"
-	},
     "battery": {
         "format": "<span font='Source Code Pro'>{icon}</span> {capacity}%",
         "format-icons": [" ", " ", " ", " ", " "],
@@ -72,14 +63,6 @@
         },
         "tooltip": false
     },
-    "network": {
-        "format": "{icon}",
-        "format-alt": "<span font='Font Awesome 5 Free 10'>︁</span> ︁{ipaddr}/{cidr} {icon}",
-        "format-alt-click": "click-left",
-        "format-wifi": "<span font='Font Awesome 5 Free 10'></span> {essid} ({signalStrength}%)",
-        "format-ethernet": "<span font='Font Awesome 5 Free 10'>︁</span> {ifname}",
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip": false
     },
     "pulseaudio": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume}%",
@@ -101,19 +84,4 @@
         "on-scroll-up": "light -A 1",
         "on-scroll-down": "light -U 1"
     },
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 75,
-        "interval": 5,
-        "format": "{icon} {temperatureC}°",
-        "tooltip": false,
-        "format-icons": [
-            "", // Icon: temperature-empty
-            "", // Icon: temperature-quarter
-            "", // Icon: temperature-half
-            "", // Icon: temperature-three-quarters
-            ""  // Icon: temperature-full
-        ]
-    }
 }
-➜  ~
