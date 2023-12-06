@@ -20,31 +20,23 @@ window#waybar {
 #workspaces {
     margin: 0 5px;
 }
-
-#workspaces button {
-    padding: 0 8px;
-    color: #565f89;
-    border-radius: 10px;
-    min-width: 33px;
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.visible {
-    color: #a9b1d6;
+    color: white;
 }
 
 #workspaces button.focused {
-    border-top: 3px solid #FFFFFF;
-    border-bottom: 3px solid #FFFFFF;
     color: #FFFFFF;
 }
 
 #workspaces button.urgent {
-    background-color: #a96d1f;
     color: white;
 }
 
 #workspaces button:hover {
-    border-color: #bb9af7;
     color: #FFFFFF;
 }
 
