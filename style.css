@@ -114,9 +114,3 @@ window#waybar {
 #custom-storage.critical {
     color: rgba(238, 46, 36, 1);
 }
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
