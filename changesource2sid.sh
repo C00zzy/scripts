@@ -1,4 +1,4 @@
-# /bin/bash
+# /bin/sh
 #This for debian 12, This should work on any ISO, testing or stable. Sid is kinda pointless though i wouldn't use it.
 #Use openSUSE or arch if you want new packages to be honest.
 echo "Updating and upgrading the system first also removing old repos..."
