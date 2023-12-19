@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 #This is for pacman aliases, pacman syntax is dogshit IMO.
 #Linking sudo and doas incase its using doas
 #Also this installs paru! That's cool.
