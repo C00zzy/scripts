@@ -1,18 +1,17 @@
-// Waybar Config
+// Waybar Config for HyprLand
 {
     "layer": "top",
     "position": "top",
     "height": 40,
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "cpu"],
     "modules-right": ["custom/recorder", "tray", "pulseaudio", "backlight", "battery", "network", ""],
     "sway/mode": {
         "format": " {}"
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": false,
-        "disable-markup": false,
+        "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
             "1": "1 <span font='Font Awesome 5 Free 14'></span>",
@@ -31,9 +30,10 @@
         "icon-size": 20,
         "spacing": 8
     },
-    "sway/window": {
+    "hyprland/window": {
         "max-length": 60,
-        "tooltip": false
+        "tooltip": true,
+        "show-focused-workspace-name": true,
         // "format": "( {} )"
     },
     "clock": {
@@ -41,8 +41,8 @@
         "tooltip": false
     },
     "cpu": {
-        "interval": 5,
-        "format": "︁ {}%",
+        "interval": 1,
+        "format": " {}%",
         "max-length": 10
     },
     "memory": {
@@ -60,7 +60,7 @@
         "on-click": "/home/marco/.config/wofi/wofi-power.sh"
     },
     "custom/recorder": {
-		"format": "!",
+		"format": " ",
 		"return-type": "json",
 		"interval": 3,
 		"exec": "echo '{\"class\": \"recording\"}'",
@@ -69,7 +69,7 @@
         "on-click": "killall -s SIGINT wf-recorder"
 	},
     "battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span> - {capacity}%",
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>{capacity}%",
         "format-icons": [" ", " ", " ", " ", " "],
         "format-time": " ({H}h{M}m)",
         "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
@@ -103,7 +103,7 @@
         "tooltip": false
     },
     "backlight": {
-        "format": "{icon} {percent}%",
+        "format": "{icon}{percent}%",
 	"format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "],
         "on-scroll-up": "brightnessctl set 5%-",
         "on-scroll-down": "brightnessctl set 5%+",
