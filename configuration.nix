@@ -85,6 +85,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
    nwg-displays
+cinnamon.nemo
   nwg-look
     xdg-user-dirs
    fastfetch
