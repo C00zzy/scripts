@@ -122,7 +122,7 @@
                 "󰁹"
             ]
         },
-        "format-full": "Charged ",
+        "format-full": "󰁹",
         "interval": 5,
         "states": {
             "warning": 20,
