@@ -102,7 +102,6 @@ brightnessctl
 btop
 catdoc
 cava
-xfce.catfish
 pavucontrol
 dmidecode
 dnsmasq
