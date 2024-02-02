@@ -1,9 +1,5 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -13,15 +9,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
+  #networking
+  networking.firewall.enable = true;
+  networking.hostName = "nixos-laptop";
+  #networking.wireless.enable = true;
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -41,26 +32,31 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-  # Enable the X11 windowing system.
+ # Services
   services.xserver.enable = true;
 
-  # Enable the Cinnamon Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
+  services.blueman.enable = true;
 
+  services.xserver.displayManager.sddm.enable = true;
+
+  programs.hyprland.enable = true;
+
+  services.gvfs.enable = true;
+
+  xdg.portal = { enable = true; extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; };
+
+  security.polkit.enable = true;
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
   };
 
-  # Enable CUPS to print documents.
-  #services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  #Sound
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+   hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -75,55 +71,71 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-   services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+##################
+#     PACKAGES  #
+#################
+
+
+fonts.packages = with pkgs; [
+  source-code-pro
+  nerdfonts
+  migmix
+  migu
+  google-fonts
+  open-fonts
+  emojione
+  freefont_ttf
+  libertine
+  roboto
+  ubuntu_font_family
+   noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  liberation_ttf
+  fira-code
+  fira-code-symbols
+  mplus-outline-fonts.githubRelease
+  dina-font
+  proggyfonts
+  ];
+
+# User account.
   users.users.nolan = {
     isNormalUser = true;
     description = "Nolan";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-   nwg-displays
-cinnamon.nemo
-  nwg-look
-    xdg-user-dirs
+    vesktop
+    blueberry
+   gvfs
    fastfetch
    swww
-  unrar
- sl
- sddm
- sbctl
-pfetch
-alacritty
-bat
-blueberry
-bluez
-brightnessctl
-btop
-catdoc
-cava
-pavucontrol
-dmidecode
-dnsmasq
-   xdg-desktop-portal-hyprland
-  xdg-desktop-portal
-xdg-desktop-portal-wlr
-xdg-desktop-portal-gtk
-     vivaldi
-     vivaldi-ffmpeg-codecs
-     widevine-cdm  
-     aria2
-      neovim
-      hyprland
-      waybar
-      fuzzel
-    #  thunderbird
+   unrar
+   sl
+   sddm
+   shotman
+   pfetch
+   bat
+   blueberry
+   btop
+   cava
+   pavucontrol
+   dmidecode
+    vivaldi
+    vivaldi-ffmpeg-codecs
+    widevine-cdm
+     neovim
+     waybar
+     fuzzel
+
     ];
   };
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
+  services.printing.enable = true;
+  services.xserver.libinput.enable = true;
   services.xserver.displayManager.autoLogin.user = "nolan";
 
   # Allow unfree packages
@@ -132,8 +144,32 @@ xdg-desktop-portal-gtk
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   wget
+  aria2
+  pkgs.home-manager
+     hyprland
+     git
+   brightnessctl
+  catppuccin
+  catppuccin-gtk
+  gvfs
+   papirus-icon-theme
+   nwg-look
+  cinnamon.nemo
+  wl-clipboard
+  nano
+  bluez
+  w3m	
+  xdg-user-dirs
+  xdg-desktop-portal-hyprland
+  xdg-desktop-portal
+  xdg-desktop-portal-wlr
+  xdg-desktop-portal-gtk
+  dnsmasq
+  amdvlk
+  amd-blis
+  microcodeAmd
+  auto-cpufreq
+  alacritty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
