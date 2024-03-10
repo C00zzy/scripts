@@ -1,0 +1,180 @@
+########################
+####  SWAY CONFIG   ####
+########################
+
+#### VARIABLES ####
+
+set $suspend systemctl suspend
+
+set $notify dunst
+
+set $term alacritty
+
+set $launcher fuzzel
+
+set $browser firefox
+
+set $file_manager thunar
+
+set $mod Mod4
+
+#### VARIABLES ####
+
+### WALLPAPER ###
+output * bg /home/nolan/Downloads/aesthetic-computer-4k-c9qdhe02pr84wh3a.jpg fill
+### WALLPAPER ###
+
+### BAR ###
+bar swaybar_command waybar
+### BAR ###
+
+### BORDER ###
+default_border pixel 2
+default_floating_border none
+font pango:monospace 0
+titlebar_padding 1
+titlebar_border_thickness 0
+### BORDER ###
+
+### COLOR ###               Border  BG      Text    Indicator Child-border
+client.focused              #d8dee8 #d8dee8 #d8dee8 #d8dee8   #d8dee8
+client.focused_inactive     #0a0b16 #0a0b16 #d8dee8 #0a0b16   #0a0b16
+client.unfocused            #2f343f #2f343f #d8dee8 #2f343f   #2f343f
+client.urgent               #2f343f #2f343f #d8dee8 #2f343f   #2f343f
+client.placeholder          #d8dee8 #d8dee8 #d8dee8 #d8dee8   #d8dee8
+### COLOR ###
+
+### IDLE ####
+#exec swayidle -w \
+# timeout 10800 'swaylock -f -c 000000' \
+# timeout 10800'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+# before-sleep 'swaylock -f -c 000000'
+
+### IDLE ####
+
+### notify ###
+
+exec $notify
+
+### notify ###
+
+##################
+#### KEYBINDS ####
+##################
+
+bindsym $mod+f fullscreen
+
+bindsym $mod+Return exec $term
+
+bindsym $mod+q kill
+
+bindsym $mod+r exec $launcher
+
+bindsym $mod+Shift+o exec $suspend
+
+### VOLUME ###
+
+#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+### VOLUME ###
+
+### MOVING ####
+
+bindsym $mod+Left focus left
+
+bindsym $mod+Down focus down
+
+bindsym $mod+Up focus up
+
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+
+bindsym $mod+Shift+Down move down
+
+bindsym $mod+Shift+Up move up
+
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+1 workspace number 1
+
+bindsym $mod+2 workspace number 2
+
+bindsym $mod+3 workspace number 3
+
+bindsym $mod+4 workspace number 4
+
+bindsym $mod+5 workspace number 5
+
+bindsym $mod+6 workspace number 6
+
+bindsym $mod+7 workspace number 7
+
+bindsym $mod+8 workspace number 8
+
+bindsym $mod+9 workspace number 9
+
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+
+bindsym $mod+Shift+2 move container to workspace number 2
+
+bindsym $mod+Shift+3 move container to workspace number 3
+
+bindsym $mod+Shift+4 move container to workspace number 4
+
+bindsym $mod+Shift+5 move container to workspace number 5
+
+bindsym $mod+Shift+6 move container to workspace number 6
+
+bindsym $mod+Shift+7 move container to workspace number 7
+
+bindsym $mod+Shift+8 move container to workspace number 8
+
+bindsym $mod+Shift+9 move container to workspace number 9
+
+bindsym $mod+Shift+0 move container to workspace number 10
+### MOVING ####
+
+### LAYOUT ###
+bindsym $mod+s layout stacking
+
+bindsym $mod+w layout tabbed
+
+bindsym $mod+e layout toggle split
+### LAYOUT###
+bindsym $mod+i exec --no-startup-id brightnessctl s 5%+
+bindsym $mod+o exec --no-startup-id brightnessctl s 5%-
+
+##################
+#### KEYBINDS ####
+##################
+
+### MONITORS ###
+include ~/.config/sway/outputs
+### MONITORS ###
+
+## RESIZING ###
+mode "resize" {
+bindsym Left resize shrink width 30px
+bindsym Down resize grow height 30px
+bindsym Up resize shrink height 30px
+bindsym Right resize grow width 30px
+
+# Return to default mode
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+bindsym $mod+p mode "resize"
+
+
+
+
+########################
+####  SWAY CONFIG   ####
+########################
