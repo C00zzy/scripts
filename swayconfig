@@ -3,7 +3,6 @@
 ########################
 
 #### VARIABLES ####
-
 set $suspend systemctl suspend
 
 set $notify dunst
@@ -12,16 +11,19 @@ set $term alacritty
 
 set $launcher fuzzel
 
-set $browser firefox
+set $browser qutebrowser
 
 set $file_manager thunar
 
 set $mod Mod4
 
+set $shot grim
+
+
 #### VARIABLES ####
 
 ### WALLPAPER ###
-output * bg /home/nolan/Downloads/aesthetic-computer-4k-c9qdhe02pr84wh3a.jpg fill
+output * bg /home/nolan/Downloads/gnu-linux.png fill
 ### WALLPAPER ###
 
 ### BAR ###
@@ -32,16 +34,14 @@ bar swaybar_command waybar
 default_border pixel 2
 default_floating_border none
 font pango:monospace 0
-titlebar_padding 1
-titlebar_border_thickness 0
 ### BORDER ###
 
 ### COLOR ###               Border  BG      Text    Indicator Child-border
-client.focused              #d8dee8 #d8dee8 #d8dee8 #d8dee8   #d8dee8
-client.focused_inactive     #0a0b16 #0a0b16 #d8dee8 #0a0b16   #0a0b16
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-client.placeholder          #d8dee8 #d8dee8 #d8dee8 #d8dee8   #d8dee8
+client.focused              #d8dee8 #d8dee8 #d8dee8 #d8dee8    #d8dee8
+client.focused_inactive     #4C566A #4C566A #4C566A #4C566A    #4C566A
+client.unfocused            #4C566A  #4C566A #4C566A #4C566A   #4C566A
+client.urgent               #BF616A  #BF616A #BF616A #BF616A   #BF616A
+#client.placeholder          #d8dee8 #d8dee8 #d8dee8 #d8dee8   #d8dee8
 ### COLOR ###
 
 ### IDLE ####
@@ -54,7 +54,12 @@ client.placeholder          #d8dee8 #d8dee8 #d8dee8 #d8dee8   #d8dee8
 
 ### notify ###
 
+
+exec swayosd-server
+
 exec $notify
+
+exec batsignal
 
 ### notify ###
 
@@ -72,17 +77,35 @@ bindsym $mod+r exec $launcher
 
 bindsym $mod+Shift+o exec $suspend
 
-### VOLUME ###
+bindsym $mod+t exec $browser
 
-#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $mod+Shift+k exec pkill sway
 
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+Shift+s exec $shot
 
 ### VOLUME ###
+
+
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
 
 ### MOVING ####
+
+bindsym $mod+space floating toggle
+
+floating_modifier $mod normal
+
+bindgesture swipe:right workspace prev
+
+bindgesture swipe:left workspace next
+
+bindsym $mod+Next workspace next
+
+bindsym $mod+Prior workspace prev
 
 bindsym $mod+Left focus left
 
@@ -147,10 +170,16 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 
 bindsym $mod+e layout toggle split
-### LAYOUT###
-bindsym $mod+i exec --no-startup-id brightnessctl s 5%+
-bindsym $mod+o exec --no-startup-id brightnessctl s 5%-
 
+bindsym $mod+Shift+space floating toggle
+### LAYOUT ###
+
+### BRIGHTNESS ###
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
+
+### BRIGHTNESS ###
+bindsym $mod+Shift+c reload
 ##################
 #### KEYBINDS ####
 ##################
@@ -173,7 +202,7 @@ bindsym Escape mode "default"
 bindsym $mod+p mode "resize"
 
 
-
+exec "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
 ########################
 ####  SWAY CONFIG   ####
