@@ -1,39 +1,36 @@
+ Colors (Nord)
+
+# Default colors
 [colors.primary]
-background = "#0f0e15"
-foreground = "#d8d8d8"
+background = '#2E3440'
+foreground = '#D8DEE9'
 
-[colors.cursor]
-cursor = "#826dff"
-
-[colors.selection]
-text = "CellForeground"
-background = "#20203a"
-
+# Normal colors
 [colors.normal]
-black = "#09080e"
-red = "#d96666"
-green = "#3affb0"
-yellow = "#dcaa75"
-blue = "#825cff"
-magenta = "#825cff"
-cyan = "#3affb0"
-white = "#d8d8d8"
+black   = '#3B4252'
+red     = '#BF616A'
+green   = '#A3BE8C'
+yellow  = '#EBCB8B'
+blue    = '#81A1C1'
+magenta = '#B48EAD'
+cyan    = '#88C0D0'
+white   = '#E5E9F0'
 
+# Bright colors
 [colors.bright]
-black = "#2d2d2d"
-red = "#d96666"
-green = "#3affb0"
-yellow = "#dcaa75"
-blue = "#825cff"
-magenta = "#825cff"
-cyan = "#3affb0"
-white = "#d8d8d8"
+black   = '#4C566A'
+red     = '#BF616A'
+green   = '#A3BE8C'
+yellow  = '#EBCB8B'
+blue    = '#81A1C1'
+magenta = '#B48EAD'
+cyan    = '#8FBCBB'
+white   = '#ECEFF4'
 
 [window]
-decorations = "none"
 decorations_theme_variant = "Dark"
 dynamic_title = true
-opacity = 0.9
+opacity = 0.8
 startup_mode = "Windowed"
 title = "Terminal"
 [font]
@@ -54,3 +51,4 @@ style = "Italic"
 [font.normal]
 family = "Source Code Pro"
 style = "Regular"
+➜  ~
